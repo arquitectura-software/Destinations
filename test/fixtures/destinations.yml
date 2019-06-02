@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  weather: MyString
+  description: MyText
+  time-zone: MyString
+  landing-time: 2019-06-02 06:16:13
+  boarding-time: 2019-06-02 06:16:13
+
+two:
+  name: MyString
+  weather: MyString
+  description: MyText
+  time-zone: MyString
+  landing-time: 2019-06-02 06:16:13
+  boarding-time: 2019-06-02 06:16:13

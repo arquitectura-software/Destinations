@@ -1,0 +1,44 @@
+version: '2.1'
+
+services:
+
+  infodestinations-ms:
+    build: .
+    command: bundle exec rails s -b 0.0.0.0
+    volumes:
+      - .:/home/app
+      - ".:/app"
+      - "./config/docker/database.yml:/app/config/database.yml"
+      - bundle:/bundle
+    environment:
+      RAILS_ENV: development
+      RAILS_MAX_THREADS: 5
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_DATABASE: infodestinations_image_db
+      DB_PORT: 3306
+      DB_HOST: infodestinations-db
+    ports:
+      - "3001:3000"
+    links:
+      - infodestinations-db
+
+  infodestinations-db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+      - ".:/app"
+      
+      
+volumes:
+  db-data:
+    driver: local
+  bundle:
+    driver: local
+
