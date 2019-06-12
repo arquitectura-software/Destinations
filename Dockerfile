@@ -16,7 +16,7 @@ RUN chmod +x /usr/bin/entrypoint.sh
 #RUN chmod +x /usr/bin/startup.sh
 #ENTRYPOINT ["entrypoint.sh", "./config/docker/startup.sh"]
 ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3000
+EXPOSE 3001
 
 # Start the main process.
 CMD ["rails", "server", "-b", "0.0.0.0"]

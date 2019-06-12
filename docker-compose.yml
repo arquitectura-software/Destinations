@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/home/app
       - ".:/app"
-      - "./config/docker/database.yml:/app/config/database.yml"
+      - "./config/database.yml:/app/config/database.yml"
       - bundle:/bundle
     environment:
       RAILS_ENV: development

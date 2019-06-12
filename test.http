@@ -1,12 +1,8 @@
 # LISTAR TODOS LOS DESTINOS DISPONIBLES
 # GET http://localhost:3000/destinations
 
-
-
 # LISTAR UN DESTINO POR ID 
 # GET http://localhost:3000/destinations/2
-
-
 
 # CREAR INFO DE UN DESTINO
 # POST http://localhost:3000/destinations HTTP/1.1
@@ -20,8 +16,6 @@
 #     "landingtime":"2019-05-19T18:30:00+00:00",
 #     "boardingtime":"2019-05-19T10:15:00+00:00"
 # }
-
-
 
 # POST http://localhost:3000/destinations HTTP/1.1
 # content-type: application/json
