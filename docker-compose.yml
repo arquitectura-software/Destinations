@@ -19,7 +19,7 @@ services:
       DB_PORT: 3306
       DB_HOST: infodestinations-db
     ports:
-      - "3001:3000"
+      - "3000:3000"
     links:
       - infodestinations-db
 
