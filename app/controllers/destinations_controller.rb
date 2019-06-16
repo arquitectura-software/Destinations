@@ -41,9 +41,9 @@ class DestinationsController < ApplicationController
       @destination = Destination.find(params[:id])
       if @destination
         @destination.destroy
-        render json: {"Message":"Destination deleted successfully"}
+        render json: @destination, status: :ok
       else
-        render json: {"Message":"Destination not found"}, status: :not_found
+        render json: @destination.errors, status: :not_found
       end
     end
   
