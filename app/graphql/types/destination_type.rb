@@ -1,6 +1,6 @@
 module Types
     class DestinationType < BaseObject
-      field :id, ID, null: false
+      field :id, Integer, null: false
       field :name, String, null: false
       field :weather, String, null: false
       field :description, String, null: false
