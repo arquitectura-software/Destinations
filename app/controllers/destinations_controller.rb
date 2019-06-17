@@ -5,12 +5,12 @@ class DestinationsController < ApplicationController
     def index
       @destinations = Destination.all
   
-      render json: @destinations.as_json(only: [:name, :weather, :description, :timezone, :landingtime, :boardingtime])
+      render json: @destinations.as_json(only: [:id, :name, :weather, :description, :timezone, :landingtime, :boardingtime])
     end
   
     # GET /destinations/1
     def show
-      render json: @destination.as_json(only: [:name, :weather, :description, :timezone, :landingtime, :boardingtime])
+      render json: @destination.as_json(only: [:id, :name, :weather, :description, :timezone, :landingtime, :boardingtime])
     end
   
     # POST /destinations
@@ -41,9 +41,9 @@ class DestinationsController < ApplicationController
       @destination = Destination.find(params[:id])
       if @destination
         @destination.destroy
-        render json: {"Message":"Destination deleted successfully"}
+        render json: @destination, status: :ok
       else
-        render json: {"Message":"Destination not found"}, status: :not_found
+        render json: @destination.errors, status: :not_found
       end
     end
   
