@@ -5,12 +5,12 @@ class DestinationsController < ApplicationController
     def index
       @destinations = Destination.all
   
-      render json: @destinations.as_json(only: [:id, :name, :weather, :description, :timezone, :landingtime, :boardingtime])
+      render json: @destinations.as_json(only: [:id, :name, :weather, :description, :timezone, :cityimage, :landingtime, :boardingtime])
     end
   
     # GET /destinations/1
     def show
-      render json: @destination.as_json(only: [:id, :name, :weather, :description, :timezone, :landingtime, :boardingtime])
+      render json: @destination.as_json(only: [:id, :name, :weather, :description, :timezone, :cityimage, :landingtime, :boardingtime])
     end
   
     # POST /destinations
@@ -55,6 +55,6 @@ class DestinationsController < ApplicationController
   
       # Only allow a trusted parameter "white list" through.
       def destination_params
-        params.require(:destination).permit(:name, :weather, :description, :timezone, :landingtime, :boardingtime)
+        params.require(:destination).permit(:name, :weather, :description, :timezone, :cityimage, :landingtime, :boardingtime)
       end
 end
